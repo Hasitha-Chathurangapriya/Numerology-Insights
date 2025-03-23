@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Inline SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z' fill='%23f5e050'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader">
+            <div class="numerology-spinner"></div>
+            <div class="numerology-orbit"></div>
+            <p>Decoding Your Cosmic Blueprint...</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h1 class="text-center display-4 mb-4 animate__animated animate__fadeIn">Numerology Insights</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-10">
+                <form id="numerologyForm" class="p-4 shadow-lg rounded bg-dark text-light animate__animated animate__zoomIn">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            <button type="button" class="btn btn-outline-light" id="voiceName"><i class="mic-icon">🎤</i></button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthdate" class="form-label">Birthdate</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="birthdate" required>
+                            <button type="button" class="btn btn-outline-light" id="voiceDate"><i class="mic-icon">🎤</i></button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary w-45" id="calculateBtn">Calculate</button>
+                        <button type="button" class="btn btn-secondary w-45" id="clearBtn">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="result" class="mt-5 p-4 bg-light shadow-lg rounded numerology-result animate__animated" style="display: none;">
+            <h2 class="text-center result-title">Your Numerology Insights</h2>
+            <div class="numerology-card">
+                <p id="calculationSteps" class="mt-3"></p>
+                <h4 class="trait-title">Life Path Timeline:</h4>
+                <div id="lifePathTimeline" class="timeline"></div>
+                <h4 class="trait-title">Personality Traits:</h4>
+                <p id="traits" class="trait-text"></p>
+                <h4 class="trait-title">Character Type:</h4>
+                <p id="characterType" class="trait-text"></p>
+                <button id="downloadPdf" class="btn btn-success mt-3">Download as PDF</button>
+            </div>
+        </div>
+        <button id="backToTop" class="btn back-to-top">↑</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
